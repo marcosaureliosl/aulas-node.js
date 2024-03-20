@@ -1,23 +1,23 @@
-import { promises as fs } from "fs";
-import falarHello from "./escrever.js";
 import { calcularExpressao } from "./calculadora/calculadora.js";
+import { lerArquivo } from "./leitorArquivo.js";
+import { escreverLog } from "./escritorLog.js";
+import falarHello from "./escrever.js";
 
 falarHello();
 
 // Exemplo de uso:
-calcularExpressao( '3 / 2');
+calcularExpressao('3 / 2');
 
-
-//(DESACOMPLAR) TRANSFORMAR EM UM MODULO QUE LE E CRIAR UM NOVO QUE ESCREVE EM UM LOG.txt
-async function lerArquivo(pathFile) {
+async function main() {
     try {
-        const file = await fs.readFile(pathFile, "ascii");
-        console.log(file);
+        const conteudo = await lerArquivo("arquivo.txt");
+        console.log("Conteúdo do arquivo:", conteudo);
+        await escreverLog("Conteúdo do arquivo lido: " + conteudo);
     } catch (error) {
-        console.error(error);
+        console.error("Erro:", error);
     }
-
-    console.log("A prova que n");
 }
+
+main();
 
 lerArquivo("package.json");

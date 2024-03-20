@@ -1,0 +1,2 @@
+Segue abaixo o texto da aplicação em Node.js da aula ministrada pelo nosso querido professor Ronier Lima
+Conteúdo do arquivo lido: bom diam segue texte da aplicação em node.js da aula do nosso queridissimo professor Ronier Lima.
